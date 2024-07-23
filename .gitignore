@@ -160,3 +160,67 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Compiled class files
+*.class
+
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+pom.xml.properties
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Temporary files
+*.swp
+*.swo
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA plugin
+.idea_modules/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+*.pyo
+*.pyd
+*.pydist
+*.pyz
+*.pyz.zip
+
+# PyCharm
+*.idea/*
+*.pyc
+*.pypirc
+.vscode/
+
+.env.bak/
+
+*.coverage
+coverage/
+*.code-workspace
+# Unit test / coverage reports
+.pytest_cache
+*,cover
+dmypy.log
+
+# PyCharm sensitive or temporary files
+*.sublime-workspace
+*.sublime-project
+.idea/*
+
+sonar-project.properties
+.jqwik-database
