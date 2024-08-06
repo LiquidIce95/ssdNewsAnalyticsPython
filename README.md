@@ -1,1 +1,2 @@
-# ssdNewsAnalyticsModulePython
+# PrototypeSSDNewsAnalyitcsPython
+PythonBackend
