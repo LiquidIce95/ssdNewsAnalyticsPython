@@ -1,25 +1,18 @@
-services:
-  db:
-    image: postgres:13
-    volumes:
-      - ./db_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+version: '3.9'
 
+services:
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - .:/app
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+    network_mode: "host"  # This allows Docker to use the host's network stack
     environment:
-      DB_NAME: mydatabase
-      DB_USER: myuser
-      DB_PASSWORD: mypassword
-      DB_HOST: db
-      DB_PORT: 5432
+      - DEBUG=1
+      - DB_NAME=mydatabase
+      - DB_USER=myuser
+      - DB_PASSWORD=mypassword
+      - DB_HOST=localhost  # Now localhost refers to the host's localhost
+      - DB_PORT=5432
