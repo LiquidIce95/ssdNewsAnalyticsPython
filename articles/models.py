@@ -19,7 +19,7 @@ class Article(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE, db_column='owner_id')
     newspaper = models.ForeignKey(Newspaper, on_delete=models.CASCADE, db_column='newspaper_id')
     content = models.TextField(db_column='content')
-    analytics = models.OneToOneField(ArticleAnalytics, on_delete=models.CASCADE, db_column='analytics_id')
+    analytics = models.OneToOneField(ArticleAnalytics, on_delete=models.CASCADE, db_column='article_analytics_id')
 
     class Meta:
         db_table = 'article'

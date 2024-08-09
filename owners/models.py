@@ -8,7 +8,7 @@ class OwnerAnalytics(Analytics):
 class Owner(models.Model):
     owner_id = models.AutoField(primary_key=True, db_column='owner_id')
     name = models.CharField(max_length=255, db_column='owner_name')
-    analytics = models.OneToOneField(OwnerAnalytics, on_delete=models.CASCADE, db_column='analytics_id')
+    analytics = models.OneToOneField(OwnerAnalytics, on_delete=models.CASCADE, db_column='owner_analytics_id')
 
     class Meta:
         db_table = 'owner'
