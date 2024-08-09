@@ -3,16 +3,19 @@ version: '3.9'
 services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python manage.py makemigrations &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
       - "8000:8000"
-    network_mode: "host"  # This allows Docker to use the host's network stack
+    network_mode: "host"
     environment:
       - DEBUG=1
       - DB_NAME=mydatabase
       - DB_USER=myuser
       - DB_PASSWORD=mypassword
-      - DB_HOST=localhost  # Now localhost refers to the host's localhost
+      - DB_HOST=localhost
       - DB_PORT=5432
